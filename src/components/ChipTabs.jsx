@@ -38,7 +38,7 @@ const Chip = ({
       className={`${
         selected
           ? "text-white"
-          : "text-slate-300 hover:text-slate-200 hover:bg-slate-700"
+          : "text-slate-300 hover:text-slate-200 hover:bg-slate-600"
       } text-bold font-sans transition-colors px-2.5 py-0.5 rounded-md relative`}
     >
       <span className="relative z-10">{text}</span>
