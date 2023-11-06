@@ -54,7 +54,7 @@ function App() {
           >
             DIA
           </Typography>
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '1rem', justifyContent: 'space-evenly', p: '1rem' }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '1rem', justifyContent: 'space-evenly', p: '1rem'}}>
             <Link to="/home">
               <Typography variant="h6" noWrap component="div" sx={{ color: "white" }}>
                 Home
