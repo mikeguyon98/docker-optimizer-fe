@@ -7,12 +7,14 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import LoadingScreen from '../components/LoadingScreen';
+import FormatTextWithLineBreaks from '../components/FormatTextLineBreaks';
+import ExpandableCard from '../components/ExpandableCard';
 
 
 function Optimizer() {
     const [imageName, setImageName] = useState('');
     const [dockerFile, setDockerFile] = useState('');
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [apiFeedback, setApiFeedback] = useState(null);
 
     const handleOptimize = async () => {
@@ -42,11 +44,9 @@ function Optimizer() {
     if (apiFeedback) {
         // Render feedback
         return (
-            <div className="min-h-screen h-auto w-full bg-primarydark flex items-center justify-content-center overscroll-y-auto">
-            <div className="p-10 max-w-2xl mx-auto w-1/2 bg-secondarydark rounded-xl shadow-lg flex flex-col items-center justify-content-center space-y-6">
-                {apiFeedback.analysis}
-            </div>
-            </div>
+            <Box sx={{ my: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-evenly", height: "100%", width: "100%" }} className="bg-transparent">
+                <ExpandableCard expandedText = {apiFeedback.analysis} stats={apiFeedback.stats} />
+            </Box>
         );
     }
 
