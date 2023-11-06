@@ -5,7 +5,8 @@ import MButton from '../components/Buttons/MediumButton';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CircularProgress from '@mui/material/CircularProgress'; // Import a loading component from MUI
+import Typography from '@mui/material/Typography';
+import LinearProgress from '@mui/material/LinearProgress'; // Import a loading component from MUI
 
 function Optimizer() {
     const [imageName, setImageName] = useState('');
@@ -33,17 +34,20 @@ function Optimizer() {
     if (isLoading) {
         // Render loading animation
         return (
-            <div className="h-screen w-full bg-primarydark flex items-center justify-content-center">
-            <div className="p-10 max-w-2xl mx-auto w-1/2 bg-secondarydark rounded-xl shadow-lg flex flex-col items-center justify-content-center space-y-6">
-                <div>
-                    <div className="text-xl font-sans font-medium text-white">Optimizing...</div>
-                </div>
-                <div>
-                    <div className="text-xl font-sans font-medium text-white">This may take several minutes</div>
-                </div>
-                <CircularProgress color="inherit" />
-            </div>
-            </div>
+            <Box sx={{ my: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-evenly", height: "100%", width: "100%" }} className="bg-transparent">
+                <Card sx={{ maxWidth: 900, width: "50%",margin: "40px"}}>
+                    <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        Loading...
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        Please wait while we optimize your Dockerfile. This may take up to 5 minutes....
+                    </Typography>
+                    <br />
+                    <LinearProgress color="secondary" />
+                </CardContent>
+                </Card>
+            </Box>
         );
     }
 
