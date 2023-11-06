@@ -3,3 +3,13 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+/* index.css */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* This prevents horizontal scroll */
+  overscroll-behavior: none; /* This prevents scroll bounce */
+  background-color: #161616;
+  width: 100%;
+}
