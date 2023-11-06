@@ -85,7 +85,7 @@ function App() {
           width: "100vw", // Sets the width to 100% of the viewport width
           maxWidth: "100vw", // Allows the Container to stretch fully
           minWidth: "100vw", // Allows the Container to stretch fully
-          border: "1px solid black",
+          border: "1px solid #161616",
         }}
       >
       <Routes>
