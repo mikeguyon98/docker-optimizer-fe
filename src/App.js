@@ -9,7 +9,7 @@ import {
 import * as React from 'react';
 
 import Home from "./pages/Home";
-import About from "./pages/About";
+import Docs from "./pages/Docs";
 import Navbar from "./components/NavBar";
 import Optimizer from "./pages/Optimizer";
 
@@ -21,6 +21,7 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Slide from '@mui/material/Slide';
+import { Button } from "@mui/material";
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -42,10 +43,9 @@ function App() {
   return (
     <BrowserRouter>
     <React.Fragment>
-      <CssBaseline />
       <HideOnScroll >
         <AppBar sx={{ bgcolor: '#2f2f2f' }}>
-          <Toolbar>
+          <Toolbar >
           <Typography
             variant="h3"
             noWrap
@@ -55,21 +55,27 @@ function App() {
             DIA
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '1rem', justifyContent: 'space-evenly', p: '1rem'}}>
+            <Button variant="text">
             <Link to="/home">
               <Typography variant="h6" noWrap component="div" sx={{ color: "white" }}>
                 Home
               </Typography>
             </Link>
-            <Link to="/about">
-              <Typography variant="h6" noWrap component="div" sx={{ color: "white" }}>
-                About
-              </Typography>
-            </Link>
+            </Button>
+            <Button variant="text">
             <Link to="/optimizer">
               <Typography variant="h6" noWrap component="div" sx={{ color: "white" }}>
                 Optimizer
               </Typography>
             </Link>
+            </Button>
+            <Button variant="text">
+            <Link to="/docs">
+              <Typography variant="h6" noWrap component="div" sx={{ color: "white" }}>
+                Docs
+              </Typography>
+            </Link>
+            </Button>
           </Box>
           </Toolbar>
         </AppBar>
@@ -86,12 +92,13 @@ function App() {
           maxWidth: "100vw", // Allows the Container to stretch fully
           minWidth: "100vw", // Allows the Container to stretch fully
           border: "1px solid #161616",
+          overscrollBehavior: "none",
         }}
       >
       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/docs" element={<Docs />} />
           <Route path="/optimizer" element={<Optimizer />} />
         </Routes>
     </Container>

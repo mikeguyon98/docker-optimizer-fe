@@ -26,6 +26,7 @@ function Home() {
                 <Typography variant="p" component="div" sx={{color: "white", textAlign: "center", padding: 3}}>
                 {"At DIA, we're committed to providing developers with state-of-the-art tools to streamline their development process. Harnessing the power of advanced Language Learning Models (LLMs), DIA offers a unique platform that meticulously analyzes your Docker images, identifying opportunities to trim down size without compromising functionality."}
                 </Typography>
+                <Button component={Link} to="/docs" variant='contained' color='secondary' sx={{marginLeft: 2, marginTop: 5}}>Documentation</Button>
                 </CardContent>
             </CardActionArea>
             </Card>

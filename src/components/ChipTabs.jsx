@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const tabs = ["Home", "About", "Optimizer", "FAQ"];
+const tabs = ["Home", "Docs", "Optimizer", "FAQ"];
 
 const ChipTabs = () => {
   const location = useLocation(); // Get the current location
