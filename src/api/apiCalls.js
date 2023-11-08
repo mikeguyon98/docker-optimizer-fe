@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const analyzePost = async (imageName, dockerFile) => {
     try {
-        const response = await axios.post('http://aa620f232990943e08c706ef917c4361-897749343.us-east-2.elb.amazonaws.com/analyze', {
+        const response = await axios.post('https://diaapi.com/analyze', {
             "image_name": imageName,
             "dockerfile": dockerFile
         });

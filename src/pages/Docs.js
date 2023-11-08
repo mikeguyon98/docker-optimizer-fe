@@ -13,13 +13,9 @@ import ListItem from '@mui/material/ListItem';
 function Docs() {
     const gettingStartedRef = useRef(null);
     const uploadingDockerfileRef = useRef(null);
-    const providingDockerImage = useRef(null);
     const analyzingDockerImage = useRef(null);
     const understandingDockerfile = useRef(null);
     const applyingOptimizations = useRef(null);
-    const exampleDockerfile = useRef(null);
-    const FAQ = useRef(null);
-    const contactUs = useRef(null);
 
     const scrollToRef = (ref) => (event) => {
         event.preventDefault();
@@ -45,10 +41,7 @@ function Docs() {
                         1. Getting Started
                     </ListItem>
                     <ListItem button component="a" href="#gettingStarted" onClick={scrollToRef(uploadingDockerfileRef)} sx={{ '&:hover': { textDecoration: 'underline' } }}>
-                        2. Uploading Your Dockerfile
-                    </ListItem>
-                    <ListItem button component="a" href="#gettingStarted" onClick={scrollToRef(providingDockerImage)} sx={{ '&:hover': { textDecoration: 'underline' } }}>
-                        3. Providing Your Docker Image
+                        2. Providing Your Docker Image and Dockerfile Details
                     </ListItem>
                     <ListItem button component="a" href="#gettingStarted" onClick={scrollToRef(gettingStartedRef)} sx={{ '&:hover': { textDecoration: 'underline' } }}>
                         4. Analysis and Recommendations
@@ -58,12 +51,6 @@ function Docs() {
                     </ListItem>
                     <ListItem button component="a" href="#gettingStarted" onClick={scrollToRef(gettingStartedRef)} sx={{ '&:hover': { textDecoration: 'underline' } }}>
                         6. Applying Optimizations
-                    </ListItem>
-                    <ListItem button component="a" href="#gettingStarted" onClick={scrollToRef(gettingStartedRef)} sx={{ '&:hover': { textDecoration: 'underline' } }}>
-                        7. Example: Optimizing a Sample Project
-                    </ListItem>
-                    <ListItem button component="a" href="#gettingStarted" onClick={scrollToRef(gettingStartedRef)} sx={{ '&:hover': { textDecoration: 'underline' } }}>
-                        8. FAQ
                     </ListItem>
                 </List>
                 </Box>
@@ -79,15 +66,7 @@ function Docs() {
                     <Typography variant="p" component="div" sx={{color: "white", textAlign: "left", paddingLeft: 2, paddingRight: 2}}>
                         <ol style={{listStyle: "decimal", padding: "10px", marginLeft: "5px"}}>
                             <li>
-                                {"Provide Your Docker Image Name:"}
-                                <ul style={{listStyle: "disc", padding: "10px", marginLeft: "5px"}}>
-                                    <li>
-                                        {"Beneath the Dockerfile textbox, you will find a field to enter the name of your Docker image."}
-                                    </li>
-                                    <li>
-                                        {"The Docker image name must be a valid Docker image name."}
-                                    </li>
-                                </ul>
+                                {"A public Docker image hosted on a registry (e.g., Docker Hub)."}
                             </li>
                             <li>
                                 {"The associated Dockerfile for the above Docker image."}
@@ -101,47 +80,37 @@ function Docs() {
                 <br></br>
                 <Box sx={{paddingLeft: 2, paddingRight: 2, marginBottom: 2}} ref={uploadingDockerfileRef} id="uploadingDockerfile">
                     <Typography variant="h6" component="div" sx={{color: "white", fontWeight: "bold", textAlign: "left", paddingBottom: 1, marginTop: 2, paddingLeft: 2, marginBottom: 1}}>
-                        Uploading Your Docker Image and Dockerfile Details
+                        Providing Your Docker Image and Dockerfile Details
                     </Typography>
                     <Typography variant="h7" component="div" sx={{color: "white", textAlign: "left", paddingLeft: 2, paddingRight: 2, marginBottom: 1}}>
-                        {"After uploading your Dockerfile, you need to provide details of your Docker image:"}
+                        {"To begin the analysis, you need to provide your Dockerfile and Docker image to DIA:"}
                     </Typography>
                     {/* Add bullet points */}
                     <Typography variant="p" component="div" sx={{color: "white", textAlign: "left", paddingLeft: 2, paddingRight: 2}}>
-                        <ol style={{listStyle: "decimal", padding: "10px"}}> 
+                        <ol style={{listStyle: "decimal", padding: "10px", marginLeft: "5px"}}> 
                             <li>
-                                    {"Click on the "}
-                                    <b>{"OPTIMIZE "}</b>
-                                    {"button in the Navigation bar."}
-                                </li>
-                            <li>
-                                {"Copy the contents of the Dockerfile associated with your Docker image."}
+                                {"Provide Your Docker Image Name:"}
+                                <ul style={{listStyle: "disc", padding: "10px", marginLeft: "5px"}}>
+                                    <li>
+                                        {"Navigate to the Optimize page by clicking the Optimize button in the Menu."}
+                                    </li>
+                                    <li>
+                                        {"At the top of the page you will find a field to enter the name of your Docker image."}
+                                    </li>
+                                    <li>
+                                        {"Type in the full name of your image in the format"} <b>{"\'repository/name:tag\'"}</b> {". For instance, if your image is hosted on Docker Hub, it might look something like "} <b>{"username/myapp:latest"}</b>{"."}
+                                    </li>
+                                </ul>
                             </li>
                             <li>
-                                {""}
+                                {"Provide Your Dockerfile:"}
+                                <ul style={{listStyle: "disc", padding: "10px", marginLeft: "5px"}}>
+                                    <li>
+                                        {"Copy and paste the text from your Dockerfile in the "} <b>{"Dockerfile"}</b> {" field."}
+                                    </li>
+                                </ul>
                             </li>
                         </ol>
-                    </Typography>
-                </Box>
-                <br></br>
-                <Box sx={{paddingLeft: 2, paddingRight: 2, marginBottom: 2}} ref={providingDockerImage} id="providingDockerImage">
-                    <Typography variant="h6" component="div" sx={{color: "white", fontWeight: "bold", textAlign: "left", paddingBottom: 1, marginTop: 2, paddingLeft: 2}}>
-                        Providing Your Docker Image
-                    </Typography>
-                    <Typography variant="p" component="div" sx={{color: "white", textAlign: "left", paddingLeft: 2, paddingRight: 2}}>
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
                     </Typography>
                 </Box>
                 <br></br>
@@ -149,20 +118,21 @@ function Docs() {
                     <Typography variant="h6" component="div" sx={{color: "white", fontWeight: "bold", textAlign: "left", paddingBottom: 1, marginTop: 2, paddingLeft: 2}}>
                         Analysis and Recommendations
                     </Typography>
+                    <Typography variant="h7" component="div" sx={{color: "white", textAlign: "left", paddingLeft: 2, paddingRight: 2, marginBottom: 1}}>
+                        {"Once you have provided the Dockerfile and image name:"}
+                    </Typography>
                     <Typography variant="p" component="div" sx={{color: "white", textAlign: "left", paddingLeft: 2, paddingRight: 2}}>
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
+                        <ol style={{listStyle: "decimal", padding: "10px", marginLeft: "5px"}}> 
+                            <li>
+                                {"Click the "} <b>{"Optimize"}</b> {" button to start the analysis process."}
+                            </li>
+                            <li>
+                                {"The analysis can take a few minutes. During this time, DIA’s LLMs assess layer-by-layer details, checks for best practices, and identifies potential optimizations."}
+                            </li>
+                            <li>
+                                {"After the analysis is complete, DIA will display a set of recommendations and an optimized Dockerfile for review."}
+                            </li>
+                        </ol>
                     </Typography>
                 </Box>
                 <br></br>
@@ -170,20 +140,21 @@ function Docs() {
                     <Typography variant="h6" component="div" sx={{color: "white", fontWeight: "bold", textAlign: "left", paddingBottom: 1, marginTop: 2, paddingLeft: 2}}>
                         Understanding You Optimized Dockerfile
                     </Typography>
+                    <Typography variant="h7" component="div" sx={{color: "white", textAlign: "left", paddingLeft: 2, paddingRight: 2, marginBottom: 1}}>
+                        {"The optimized Dockerfile will be presented with annotations explaining each change::"}
+                    </Typography>
                     <Typography variant="p" component="div" sx={{color: "white", textAlign: "left", paddingLeft: 2, paddingRight: 2}}>
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
+                        <ul style={{listStyle: "sphere", padding: "10px", marginLeft: "5px"}}> 
+                            <li>
+                                <b>{"Base Image Optimization:"}</b> {" Suggesting a more efficient base image if applicable."}
+                            </li>
+                            <li>
+                                <b>{"Layer Reduction:"}</b> {" Consolidating commands to reduce the number of layers."}
+                            </li>
+                            <li>
+                                <b>{"Caching Enhancements:"}</b> {" Implementing best practices for utilizing Docker’s build cache."}
+                            </li>
+                        </ul>
                     </Typography>
                 </Box>
                 <br></br>
@@ -191,42 +162,22 @@ function Docs() {
                     <Typography variant="h6" component="div" sx={{color: "white", fontWeight: "bold", textAlign: "left", paddingBottom: 1, marginTop: 2, paddingLeft: 2}}>
                         Applying Optimizations
                     </Typography>
-                    <Typography variant="p" component="div" sx={{color: "white", textAlign: "left", paddingLeft: 2, paddingRight: 2}}>
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                    </Typography>
-                </Box>
-                <br></br>
-                <Box sx={{paddingLeft: 2, paddingRight: 2, marginBottom: 2}} ref={exampleDockerfile} id="exampleDockerfile">
-                    <Typography variant="h6" component="div" sx={{color: "white", fontWeight: "bold", textAlign: "left", paddingBottom: 1, marginTop: 2, paddingLeft: 2}}>
-                        Example: Optimizing a Sample Project
+                    <Typography variant="h7" component="div" sx={{color: "white", textAlign: "left", paddingLeft: 2, paddingRight: 2, marginBottom: 1}}>
+                        {"You can apply the suggested optimizations by:"}
                     </Typography>
                     <Typography variant="p" component="div" sx={{color: "white", textAlign: "left", paddingLeft: 2, paddingRight: 2}}>
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                        {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, sit amet ultricies nis"}
-                    </Typography>
+                        <ol style={{listStyle: "decimal", padding: "10px", marginLeft: "5px"}}> 
+                            <li>
+                                {" Reviewing each change to ensure they align with your project's requirements."}
+                            </li>
+                            <li>
+                                {"Manually editing your existing Dockerfile."}
+                            </li>
+                            <li>
+                                {"Copy and pasting provided Dockerfile into your project."}
+                            </li>
+                        </ol>
+                    </Typography>                
                 </Box>
             </Paper>
         </Box>
