@@ -11,7 +11,6 @@ import HorizontalChart from './HorizontalChart';
 
 export default function RecipeReviewCard({expandedText, stats}) {
   const [expanded, setExpanded] = React.useState(false);
-  const wastedPercent = stats.userWastedPercent*100;
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -25,7 +24,7 @@ export default function RecipeReviewCard({expandedText, stats}) {
         </Typography>
         <BarChart
             xAxis={[{ scaleType: 'band', data: ['Efficiency %', 'User Wasted %'] }]}
-            series={[{ data: [stats.efficiency, wastedPercent], color: '#9c27b0' }]}
+            series={[{ data: [stats.efficiency, stats.userWastedPercent], color: '#9c27b0' }]}
             width={500}
             height={300}
         />
